@@ -5,21 +5,19 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject cannon;
-    public GameObject spawner;
-    private Transform spawnerTransform;
+    public Transform spawnerTransform;
     void Start()
     {
-        cannon = GameObject.Find("cannon");
-        spawner = GameObject.Find("spawner");
         
     }
-    void Update()
+    public void Update()
     {
-        Transform spawnerTransform = GetComponent<Transform>();
+        spawnerTransform = GameObject.Find("spawner").transform;
     }
 
     public void cannonspawn()
     {
-        Instantiate(cannon, spawnerTransform);
+        Debug.Log("spawn");
+        Instantiate(cannon);
     }
 }
