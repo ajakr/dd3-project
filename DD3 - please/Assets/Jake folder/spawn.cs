@@ -10,7 +10,6 @@ public class spawn : MonoBehaviour
   void Awake()
   {
       spawnerobj = GameObject.Find("spawner");
-      spawnerV3 = spawnerobj.transform.position;
-      gameObject.transform.Translate(spawnerV3);
+    gameObject.transform.position = spawnerobj.transform.position;
   }
 }
