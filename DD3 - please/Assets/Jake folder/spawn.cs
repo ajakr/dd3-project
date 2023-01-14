@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-  private GameObject spawnerobj;
-  private Vector3 spawnerV3;
+  public GameObject spawnerobj;
+  public Vector3 spawnerV3;
     // Start is called before the first frame update
   void Awake()
   {
