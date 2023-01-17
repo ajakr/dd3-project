@@ -6,14 +6,6 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject cannon;
     public Transform spawnerTransform;
-    void Start()
-    {
-        
-    }
-    public void Update()
-    {
-        spawnerTransform = GameObject.Find("spawner").transform;
-    }
 
     public void cannonspawn()
     {
