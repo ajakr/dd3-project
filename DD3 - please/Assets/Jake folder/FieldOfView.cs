@@ -30,10 +30,9 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
-    void FieldOfViewCheck()
+     public void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-
         if (rangeChecks.Length != 0)
         {
             for (int i = 0; i <= rangeChecks.Length; i++)
@@ -73,5 +72,7 @@ public class FieldOfView : MonoBehaviour
             canSeePlayer = false;
             enemyUnits = null;
         }
+        
     }
+
 }
