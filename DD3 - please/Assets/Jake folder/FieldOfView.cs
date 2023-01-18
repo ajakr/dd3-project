@@ -7,9 +7,7 @@ public class FieldOfView : MonoBehaviour
     public float radius;
     [Range(0,360)]
     public float angle;
-
-    public GameObject playerRef;
-
+    public GameObject enemyUnits;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
@@ -17,7 +15,7 @@ public class FieldOfView : MonoBehaviour
 
     private void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        enemyUnits = GameObject.FindGameObjectWithTag("Enemy");
         StartCoroutine(FOVRoutine());
     }
 
@@ -32,13 +30,21 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
-    private void FieldOfViewCheck()
+    void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
         if (rangeChecks.Length != 0)
         {
-            Transform target = rangeChecks[0].transform;
+            for (int i = 0; i <= rangeChecks.Length; i++)
+            {
+                canSeePlayer = true;
+                enemyUnits = rangeChecks[i].gameObject;
+                break;
+
+            }
+
+            Transform target = enemyUnits.transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
             if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
@@ -46,14 +52,26 @@ public class FieldOfView : MonoBehaviour
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                {
                     canSeePlayer = true;
+                }
                 else
+                {
                     canSeePlayer = false;
+                    enemyUnits = null;
+                }
+
             }
             else
+            {
                 canSeePlayer = false;
+                enemyUnits = null;
+            }
         }
         else if (canSeePlayer)
+        {
             canSeePlayer = false;
+            enemyUnits = null;
+        }
     }
 }
