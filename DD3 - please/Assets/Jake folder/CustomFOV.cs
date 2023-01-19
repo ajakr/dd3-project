@@ -8,8 +8,9 @@ public class CustomFOV : MonoBehaviour
     public LayerMask enemies;
     public float timeBetweenAtacks;
     bool alreadyAttacked;
-    public float sightRange, attackRange;
-    public bool playerinsight, playerinattack;
+    public float attackRange;
+    public bool playerinattack;
+    public GameObject currentEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,16 +40,24 @@ public class CustomFOV : MonoBehaviour
 
     void FieldOfViewCheck()
     {
-        playerinattack = Physics.CheckSphere(transform.position, sightRange, enemies);
+        playerinattack = Physics.CheckSphere(transform.position, attackRange, enemies);
         if(playerinattack == true)
         {
+            CheckEnemy();
             AttackEnemy();
         }
     }
 
-
+    void CheckEnemy()
+    {
+        Collider[] enemyhitcollider = Physics.OverlapSphere(transform.position, attackRange, enemies);
+        
+        GameObject currentEnemy = enemyhitcollider.transform.parent.gameObject;
+    }
     void AttackEnemy()
     {
         StopCoroutine("CheckingForEnemy");
+        transform.LookAt(currentEnemy);
     }
+
 }

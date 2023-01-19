@@ -1039,7 +1039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.85
+      value: -5.47
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1096,11 +1096,9 @@ MonoBehaviour:
   viewRange: 12
   enemies:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   timeBetweenAtacks: 0
-  sightRange: 0
-  attackRange: 0
-  playerinsight: 0
+  attackRange: 10
   playerinattack: 0
 --- !u!1 &756353746
 GameObject:
