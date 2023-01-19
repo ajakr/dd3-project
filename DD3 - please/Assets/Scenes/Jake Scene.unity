@@ -1073,8 +1073,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: mbcannon Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -193232365762042709, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+--- !u!1 &638751027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1996237621395294173, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+  m_PrefabInstance: {fileID: 638751026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &638751028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638751027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641374df1d0ceb46ad1feccb536864e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRange: 12
+  enemies:
+    serializedVersion: 2
+    m_Bits: 0
+  timeBetweenAtacks: 0
+  sightRange: 0
+  attackRange: 0
+  playerinsight: 0
+  playerinattack: 0
 --- !u!1 &756353746
 GameObject:
   m_ObjectHideFlags: 0
