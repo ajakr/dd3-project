@@ -11,7 +11,7 @@ public class CustomFOV : MonoBehaviour
     public float attackRange;
     public bool playerinattack;
     public GameObject currentEnemy;
-    public bool checkedEnemy = false;
+    public bool checkedEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +25,15 @@ public class CustomFOV : MonoBehaviour
         {
             if(checkedEnemy == false)
             {
-                CheckEnemy();
                 checkedEnemy = true;
+                CheckEnemy();
             }
-            AttackEnemy();
         }
         
     }
     void CheckEnemy()
     {
+        Debug.Log("ahesahoogah");
         Collider[] enemyhitcollider = Physics.OverlapSphere(transform.position, attackRange, enemies);
         for(int i = 0; i<=enemyhitcollider.Length; i++)
         {
