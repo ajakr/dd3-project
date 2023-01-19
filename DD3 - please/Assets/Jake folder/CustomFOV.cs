@@ -26,6 +26,7 @@ public class CustomFOV : MonoBehaviour
             if(checkedEnemy == false)
             {
                 CheckEnemy();
+                checkedEnemy = true;
             }
             AttackEnemy();
         }
@@ -37,7 +38,6 @@ public class CustomFOV : MonoBehaviour
         for(int i = 0; i<=enemyhitcollider.Length; i++)
         {
             currentEnemy = enemyhitcollider[i].gameObject;
-            checkedEnemy = true;
             break;
         }
     }

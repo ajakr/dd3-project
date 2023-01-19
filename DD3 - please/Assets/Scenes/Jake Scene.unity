@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.71
+      value: -7.11
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1039,7 +1039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.47
+      value: -6.79
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1075,6 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -193232365762042709, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+    - {fileID: 1159189919147969527, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
 --- !u!1 &638751027 stripped
 GameObject:
@@ -1093,13 +1094,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c641374df1d0ceb46ad1feccb536864e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 12
+  viewRange: 6
   enemies:
     serializedVersion: 2
     m_Bits: 128
   timeBetweenAtacks: 0
   attackRange: 10
   playerinattack: 0
+  currentEnemy: {fileID: 0}
+  checkedEnemy: 0
 --- !u!1 &756353746
 GameObject:
   m_ObjectHideFlags: 0
