@@ -11,6 +11,7 @@ public class CustomFOV : MonoBehaviour
     public float attackRange;
     public bool playerinattack;
     public GameObject currentEnemy;
+    public bool checkedEnemy = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,45 +20,31 @@ public class CustomFOV : MonoBehaviour
 
     public void Update()
     {
-        if(playerinattack == false)
+        playerinattack = Physics.CheckSphere(transform.position, attackRange, enemies);
+        while(playerinattack == true)
         {
-            StartCoroutine("CheckingForEnemy");
+            if(checkedEnemy == false)
+            {
+                CheckEnemy();
+            }
+            AttackEnemy();
         }
         
     }
-
-    // Update is called once per frame
-    IEnumerator CheckingForEnemy()
-    {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
-
-        while (true)
-        {
-            yield return wait;
-            FieldOfViewCheck();
-        }
-    }
-
-    void FieldOfViewCheck()
-    {
-        playerinattack = Physics.CheckSphere(transform.position, attackRange, enemies);
-        if(playerinattack == true)
-        {
-            CheckEnemy();
-            AttackEnemy();
-        }
-    }
-
     void CheckEnemy()
     {
         Collider[] enemyhitcollider = Physics.OverlapSphere(transform.position, attackRange, enemies);
-        
-        GameObject currentEnemy = enemyhitcollider.transform.parent.gameObject;
+        for(int i = 0; i<=enemyhitcollider.Length; i++)
+        {
+            currentEnemy = enemyhitcollider[i].gameObject;
+            checkedEnemy = true;
+            break;
+        }
     }
     void AttackEnemy()
     {
         StopCoroutine("CheckingForEnemy");
-        transform.LookAt(currentEnemy);
+        transform.LookAt(currentEnemy.transform);
     }
 
 }
