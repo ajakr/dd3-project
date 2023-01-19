@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class EnemyAi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public NavMeshAgent agent;
+   
+   public Transform player;
+   
+   public LayerMask whatIsGround, whatIsPlayer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public float timeBetweenattacks;
+   bool alreadyAttacked;
+
+   public float sightRange, attackRange;
+   public bool playerInSightRange, playerInAttackRange;
+
+   private void Awake()
+   {
+       enemy = GameObject.Find("canon").transform;
+       agent = GetComponent<NavMeshAgent>();
+   }
+
 }
