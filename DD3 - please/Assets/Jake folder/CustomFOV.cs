@@ -15,12 +15,20 @@ public class CustomFOV : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("cannoncheck");
+    }
+
+
+    public IEnumerator cannoncheck()
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        yield return wait;
+        playerinattack = Physics.CheckSphere(transform.position, attackRange, enemies);
     }
 
     public void Update()
     {
-        playerinattack = Physics.CheckSphere(transform.position, attackRange, enemies);
+        
         while(playerinattack == true)
         {
             if(checkedEnemy == false)
