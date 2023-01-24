@@ -1035,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4361565
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1073,6 +1073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mbcannon Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2014795535488349377, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -193232365762042709, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
     - {fileID: 1159189919147969527, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
@@ -1091,15 +1095,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 638751027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c641374df1d0ceb46ad1feccb536864e, type: 3}
+  m_Script: {fileID: 11500000, guid: 34cd49ab4a31c5349b0ca37ddac7c2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-    serializedVersion: 2
-    m_Bits: 128
-  attackRange: 10
-  playerinattack: 0
-  currentEnemy: {fileID: 0}
+--- !u!135 &638751029
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638751027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.048910767
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &756353746
 GameObject:
   m_ObjectHideFlags: 0
