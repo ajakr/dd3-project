@@ -6,10 +6,14 @@ public class spherefov : MonoBehaviour
 {
     public GameObject CurrentEnemy;
     public bool enemyInRange;
+    public GameObject shooterHole, Bullet;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        
+        if(enemyInRange==true)
+        {
+            transform.LookAt(CurrentEnemy.transform.position, Vector3.up);
+        }
     }
 
     // Update is called once per frame
@@ -18,6 +22,7 @@ public class spherefov : MonoBehaviour
         if(other.tag == "Enemy")
         {
             CurrentEnemy = other.gameObject;
+            enemyInRange = true;
             StartCoroutine("Attack");
         }
     }    
@@ -25,14 +30,19 @@ public class spherefov : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            enemyInRange = false;
             StopCoroutine("Attack");
             Destroy(CurrentEnemy);
         }
     }
     private IEnumerator Attack()
     {
+        Shhootem();
         yield return new WaitForSeconds(1);
-        Debug.Log("BAM");
+        StartCoroutine("Attack");
     }
-
+    public void Shhootem()
+    {
+        Instantiate(Bullet, shooterHole.transform.position, Quaternion.identity);
+    }
 }

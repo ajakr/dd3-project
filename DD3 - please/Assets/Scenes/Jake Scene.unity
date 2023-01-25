@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1031,15 +1031,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.11
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.79
+      value: -5.95
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1073,6 +1073,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: mbcannon Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2014149321923964647, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+      propertyPath: m_Size.z
+      value: 0.020669159
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014149321923964647, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+      propertyPath: m_Center.x
+      value: -0.000000002980232
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014149321923964647, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0011037242
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014149321923964647, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0020383184
+      objectReference: {fileID: 0}
     - target: {fileID: 2014795535488349377, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_Constraints
       value: 80
@@ -1100,6 +1116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentEnemy: {fileID: 0}
   enemyInRange: 0
+  shooterHole: {fileID: 776247308}
+  Bullet: {fileID: 8167741696882868254, guid: 4cd8d96a510757240b9ab03eb8f4d957, type: 3}
 --- !u!135 &638751029
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1113,6 +1131,11 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.067458905
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &638751035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
+  m_PrefabInstance: {fileID: 638751026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756353746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1215,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756353746}
   m_CullTransparentMesh: 1
+--- !u!1 &776247308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 776247309}
+  m_Layer: 0
+  m_Name: suta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &776247309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776247308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0033, z: 0.0133}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 638751035}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974222885
 GameObject:
   m_ObjectHideFlags: 0
