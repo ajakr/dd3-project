@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1035,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1224942981664595303, guid: 27e884eedf3cc2b4c8146c3bf3a01f84, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1098,6 +1098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cd49ab4a31c5349b0ca37ddac7c2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentEnemy: {fileID: 0}
+  enemyInRange: 0
 --- !u!135 &638751029
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1109,7 +1111,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.048910767
+  m_Radius: 0.067458905
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &756353746
 GameObject:
