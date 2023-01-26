@@ -8,39 +8,54 @@ public class spherefov : MonoBehaviour
     public bool enemyInRange;
     public GameObject shooterHole;
     public Rigidbody Bullet;
+    public Collider collder;
+    private bool activey = false;
     // Start is called before the first frame update
+    public void Awake()
+    {
+        
+    }
     void Update()
     {
-        if(enemyInRange==true)
+        if(enemyInRange==true && CurrentEnemy != null)
         {
+            collder = collder.disabled;
             transform.LookAt(CurrentEnemy.transform.position, Vector3.up);
+        }
+        if(CurrentEnemy == null)
+        {
+            Debug.Log("Eafdea");
+            collder = collder.enabled;
         }
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy" && activey==false)
         {
             CurrentEnemy = other.gameObject;
             enemyInRange = true;
             StartCoroutine("Attack");
+            activey = true;
         }
     }    
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy" && activey)
         {
             enemyInRange = false;
             StopCoroutine("Attack");
-            Destroy(CurrentEnemy);
+            activey= false;
         }
     }
     private IEnumerator Attack()
     {
-        Shhootem();
-        yield return new WaitForSeconds(1);
-        StartCoroutine("Attack");
+        if(CurrentEnemy != null)
+        {
+            yield return new WaitForSeconds(1);
+            Shhootem();
+            StartCoroutine("Attack");
+        }        
     }
     public void Shhootem()
     {
