@@ -6,7 +6,8 @@ public class spherefov : MonoBehaviour
 {
     public GameObject CurrentEnemy;
     public bool enemyInRange;
-    public GameObject shooterHole, Bullet;
+    public GameObject shooterHole;
+    public Rigidbody Bullet;
     // Start is called before the first frame update
     void Update()
     {
@@ -43,6 +44,7 @@ public class spherefov : MonoBehaviour
     }
     public void Shhootem()
     {
-        Instantiate(Bullet, shooterHole.transform.position, Quaternion.identity);
+        Rigidbody PEW;
+        PEW = Instantiate(Bullet, shooterHole.transform.position, shooterHole.transform.rotation) as Rigidbody;
     }
 }
