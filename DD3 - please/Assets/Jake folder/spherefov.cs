@@ -19,13 +19,13 @@ public class spherefov : MonoBehaviour
     {
         if(enemyInRange==true && CurrentEnemy != null)
         {
-            collder = collder.disabled;
+            collder.enabled = collder.enabled;
             transform.LookAt(CurrentEnemy.transform.position, Vector3.up);
         }
         if(CurrentEnemy == null)
         {
             Debug.Log("Eafdea");
-            collder = collder.enabled;
+            collder.enabled = collder.enabled;
         }
     }
 
