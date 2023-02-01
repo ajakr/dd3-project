@@ -17,7 +17,7 @@ public class spherefov : MonoBehaviour
     }
     void Update()
     {
-        if(enemyInRange==true)
+        if(enemyInRange==true && CurrentEnemy != null)
         {
             transform.LookAt(CurrentEnemy.transform.position, Vector3.up);
         }
@@ -25,9 +25,7 @@ public class spherefov : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        collder.enabled = !collder.enabled;
-        //create disableable function for findcurrevtenemy
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy" && CurrentEnemy == null)
         {
             CurrentEnemy = other.gameObject;
             enemyInRange = true;
@@ -39,6 +37,7 @@ public class spherefov : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            CurrentEnemy = null;
             enemyInRange = false;
             StopCoroutine("Attack");
             activey= false;
