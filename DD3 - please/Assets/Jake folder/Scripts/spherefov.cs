@@ -19,19 +19,13 @@ public class spherefov : MonoBehaviour
     {
         if(enemyInRange==true && CurrentEnemy != null)
         {
-            collder.enabled = collder.enabled;
             transform.LookAt(CurrentEnemy.transform.position, Vector3.up);
-        }
-        if(CurrentEnemy == null)
-        {
-            Debug.Log("Eafdea");
-            collder.enabled = collder.enabled;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy" && activey==false)
+        if(other.tag == "Enemy" && CurrentEnemy == null)
         {
             CurrentEnemy = other.gameObject;
             enemyInRange = true;
@@ -41,8 +35,9 @@ public class spherefov : MonoBehaviour
     }    
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Enemy" && activey)
+        if(other.tag == "Enemy")
         {
+            CurrentEnemy = null;
             enemyInRange = false;
             StopCoroutine("Attack");
             activey= false;
