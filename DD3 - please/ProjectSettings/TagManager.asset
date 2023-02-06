@@ -17,7 +17,11 @@ TagManager:
   - UI
   - player
   - Enemy
+<<<<<<< Updated upstream
   - Bullet
+=======
+  - Hand
+>>>>>>> Stashed changes
   - 
   - 
   - 
