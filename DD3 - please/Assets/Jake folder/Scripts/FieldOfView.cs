@@ -35,7 +35,7 @@ public class FieldOfView : MonoBehaviour
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeChecks.Length != 0)
         {
-            for (int i = 0; i <= rangeChecks.Length; i++)
+            for (int i = 0; i >= rangeChecks.Length; i++)
             {
                 canSeePlayer = true;
                 enemyUnits = rangeChecks[i].gameObject;
