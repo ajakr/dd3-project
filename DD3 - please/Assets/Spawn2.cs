@@ -5,29 +5,25 @@ using TMPro;
 
 public class Spawn2 : MonoBehaviour
 {
-    public int waveCount;
-    public int enemyCount;
-    public float spawnRate = 1.0f;
-    public float timesBetweenWaves = 5.0f; 
-    public GameObject[] enemies;
-    public bool spawning = true;
-    public bool notSpawning = false;
+  public int waveCurrently;
+  public int enemiesHere;
+  public int enemiesNeeded;
+  public float[] goons;
+
     
-    void Start()
-    {
-  //      StartCoroutine(Spawner());
-    }
+    
+  void Start()
+  {
+    goons[] = new float [melee];
+  }
 
-    IEnumerator Spawner()
-    {
-        while (spawning == true && notSpawning == false)
-        {
-           Instantiate enemies
-        }
-    } 
+    
 
-    void Update()
-    {
+
+
+
+  void Update()
+  {
         
-    }
+  }
 }
