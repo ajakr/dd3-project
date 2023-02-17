@@ -14,6 +14,7 @@ public class EnemyMove : MonoBehaviour
     {
         goalloacation =  goal.transform.position;
         agent.SetDestination(goalloacation);
+        
     }
 
     
