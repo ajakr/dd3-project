@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GOhhh : MonoBehaviour
 {
+
+    
     public Rigidbody rb;
     public GameObject HitThing;
     void Awake()
